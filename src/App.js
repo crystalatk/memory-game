@@ -1,8 +1,11 @@
+import React, { Component, memo } from 'react';
 import MemoryCard from "./components/MemoryCard";
 
 import './App.css';
 
-function App() {
+class App() {
+  constructor
+
   return (
     <div className="App">
       <header className="App-header">
