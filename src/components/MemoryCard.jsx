@@ -1,4 +1,4 @@
-import React, { Component, memo } from 'react';
+import React, { Component } from 'react';
 import './MemoryCard.css';
 
 class MemoryCard extends Component {
@@ -9,23 +9,17 @@ class MemoryCard extends Component {
         };
     }
 
-    clickHandler() {
-        this.setState({
-            isFlipped: !this.state.isFlipped
-        });
-    }
-
     render() {
-        let memoryCardInnerClass = this.state.isFlipped ? 'MemoryCardInner flipped' : 'MemoryCardInner';
+        let memoryCardInnerClass = this.props.isFlipped ? 'MemoryCardInner flipped' : 'MemoryCardInner';
 
         return (
-            <div className="MemoryCard" onClick={this.clickHandler.bind(this)}>
+            <div className="MemoryCard" onClick={this.props.pickCard}>
                 <div className={memoryCardInnerClass}>
                     <div className="MemoryCardBack">
                         <img className="dc-logo" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png" alt="DigitalCrafts Logo"/>
                     </div>
                     <div className="MemoryCardFront">
-                        ∆
+                        {this.props.symbol}
                     </div>
                 </div>
             </div>
